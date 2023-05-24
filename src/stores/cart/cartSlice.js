@@ -9,7 +9,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addTOCart: (state, action) => {
-      console.log("abcd" + state);
+      //   console.log("abcd" + state);
       return {
         products: [...state.products, { ...action.payload, amount: 1 }],
       };

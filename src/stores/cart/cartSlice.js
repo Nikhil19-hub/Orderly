@@ -9,7 +9,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addTOCart: (state, action) => {
-      //   console.log("abcd" + state);
+      console.log("abcd" + state.products);
       return {
         products: [...state.products, { ...action.payload, amount: 1 }],
       };
@@ -18,10 +18,19 @@ export const cartSlice = createSlice({
       return { products: [] };
     },
     incrementProductAmount: (state, action) => {
+      console.log("state", state);
+      console.log("action", action);
       return {
+        // products: [
+        //   state.products.map((product) =>
+        //     product.id === action.payload.id
+        //       ? { ...product, amount: product.amount + 1 }
+        //       : product
+        //   ),
+
         products: [
-          state.products.map((product) =>
-            product.id === action.payload.id
+          ...state.products.map((product) =>
+            product._id === action.payload._id
               ? { ...product, amount: product.amount + 1 }
               : product
           ),
@@ -31,9 +40,9 @@ export const cartSlice = createSlice({
     decrementProductAmount: (state, action) => {
       return {
         products: [
-          state.products.map((product) =>
-            product.id === action.payload.id
-              ? { ...product, amount: product.amount + 1 }
+          ...state.products.map((product) =>
+            product._id === action.payload._id
+              ? { ...product, amount: product.amount - 1 }
               : product
           ),
         ],

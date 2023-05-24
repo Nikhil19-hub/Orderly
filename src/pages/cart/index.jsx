@@ -12,7 +12,8 @@ import PaymentForm from "../../components/PaymentForm"
 const Cart = () => {
   const cart = useSelector(cartProducts)
   const tabs = ['Summary', 'Delivery', 'Payment']
-  const [currentTab, handleTabSwitch] = useState(tabs, 'Summary')
+  const [currentTab, handleTabSwitch] = useState(...tabs, 'Summary')
+  console.log(currentTab)
 
   if (!cart || cart.length === 0) {
     return (

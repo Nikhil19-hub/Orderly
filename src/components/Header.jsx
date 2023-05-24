@@ -50,12 +50,24 @@ const Header = ({cartCount}) => {
           <Link to="/contact" className="text-xl">Contact Us</Link>
           {
                         isLogged ? 
-                        // <Button onClick={handleLogout}>Log Out</Button>
-                        <button onClick={handleLogout} class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-500 to-orange-400 group-hover:from-red-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-red-200 dark:focus:ring-pink-800">
-  <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-      Log Out
-  </span>
-</button> : 
+<button onClick={handleLogout} type="submit" class="
+          w-50
+          px-6
+          py-2.5
+          bg-red-600
+          text-yellow-400
+          font-medium
+          text-xs
+          leading-tight
+          uppercase
+          rounded
+          shadow-md
+          hover:bg-orange-700 hover:shadow-lg
+          focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0
+          active:bg-red-800 active:shadow-lg
+          transition
+          duration-150
+          ease-in-out">Log Out</button> : 
                         (
                             <>
                               <Link to="/login" className="text-xl">Login</Link>

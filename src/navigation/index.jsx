@@ -29,7 +29,7 @@ const Navigation = () => {
       <Route path="/menu" element={<Menu/>}/>
       <Route path="/payment" element={<Payment/>}/>
     </Routes>
-    {/* <Footer/> */}
+    <Footer/>
 </>
   )
 }

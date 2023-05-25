@@ -23,7 +23,7 @@ export const productSlice = createSlice({
 
 export const fetchProducts = createAsyncThunk("products/fetch", async () => {
   const response = await fetch(
-    "http://localhost:8080/api/products-by-categories"
+    "https://orderly-w729.onrender.com//api/products-by-categories"
   );
   const data = await response.json();
   return data;

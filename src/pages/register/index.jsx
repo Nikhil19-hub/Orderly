@@ -26,7 +26,7 @@ createUserWithEmailAndPassword(authentication, data.email, data.password).then((
   console.log("UID: ", uid)
 
 
-  fetch('http://localhost:8080/api/create-user', {
+  fetch('https://orderly-w729.onrender.com//api/create-user', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'

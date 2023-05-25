@@ -8,8 +8,27 @@ const app = express();
 const productRouter = require("./routes/productRouter");
 const userRouter = require("./routes/userRouter");
 
-var corsOptions = {
-  origin: "http://localhost:3000",
+// var corsOptions = {
+//   origin: "http://localhost:3000",
+// };
+
+// Define an array of allowed origins
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://orderly-w729.onrender.com",
+  "https://orderlyy.netlify.app/",
+];
+
+// Configure CORS options
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Check if the request origin is allowed or if it is undefined (e.g., from a non-browser client)
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
 };
 
 app.use(cors(corsOptions));

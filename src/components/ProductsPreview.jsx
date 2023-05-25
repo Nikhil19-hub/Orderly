@@ -31,7 +31,7 @@ const ProductsPreview = () => {
 
 
     useEffect(() => {
-        fetch('https://orderly-w729.onrender.com//api/products')
+        fetch('https://orderly-w729.onrender.com/api/products')
         .then(response => response.json())
         .then(data => setProduct(data?.data))
         .catch(e => console.log(e))

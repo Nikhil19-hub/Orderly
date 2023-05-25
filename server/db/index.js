@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/Orderly", { useNewUrlParser: true })
+  .connect(
+    "mongodb+srv://root:root@cluster0.ctabcdm.mongodb.net/?retryWrites=true&w=majority",
+    { useNewUrlParser: true }
+  )
   .catch((e) => {
     console.error("connection error", e.message);
   });

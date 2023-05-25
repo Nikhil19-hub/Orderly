@@ -22,6 +22,14 @@ app.get("/", (req, res) => {
   res.json({ message: "welcome to Orderly" });
 });
 
+app.get("/check", (req, res) => {
+  if (db.readyState === 1) {
+    res.send("MongoDB connection is successful");
+  } else {
+    res.send("MongoDB connection is not established");
+  }
+});
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);

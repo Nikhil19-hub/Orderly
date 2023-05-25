@@ -3,7 +3,8 @@ const MongoClient = require("mongodb").MongoClient;
 const _ = require("lodash");
 
 async function main() {
-  const uri = "mongodb://127.0.0.1://27017";
+  const uri =
+    "mongodb+srv://root:root@cluster0.ctabcdm.mongodb.net/?retryWrites=true&w=majority";
   const client = new MongoClient(uri);
 
   try {

@@ -8,9 +8,9 @@ const app = express();
 const productRouter = require("./routes/productRouter");
 const userRouter = require("./routes/userRouter");
 
-var corsOptions = {
-  origin: "https://orderlyy.netlify.app/",
-};
+// var corsOptions = {
+//   origin: "https://orderlyy.netlify.app/",
+// };
 
 // // Define an array of allowed origins
 // const allowedOrigins = [
@@ -30,7 +30,9 @@ var corsOptions = {
 //   },
 // };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
+app.options("*", cors());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
